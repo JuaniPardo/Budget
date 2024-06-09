@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Movimientos</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/water.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="mx-auto">
+    <div class="app">
+        <h1 class="text-3xl text-center my-3 border-1 border-red-700">Registro de Movimientos</h1>
+
+        <div class="max-w-lg bg-sky-950 mx-auto p-6 rounded-lg shadow-md">
+            <form id="transaction-form" class="mb-4">
+                <div class="mb-2 block"> <!--? Tipo -->
+                    <label class="block text-sm font-medium text-gray-500">Tipo</label>
+                    <select id="transaction-type" class="w-full border-gray-300 rounded mt-1">
+                    </select>
+                </div>
+                <div class="mb-2 block"> <!--? Categoria -->
+                    <label class="block text-sm font-medium text-gray-500">Categoría</label>
+                    <select name="category" id="category" class="w-full border-gray-300 rounded mt-1">
+                    </select>
+                </div>
+                <div class="mb-2"> <!--? Monto -->
+                    <label class="block text-sm font-medium text-gray-500">Cantidad</label>
+                    <input type="number" id="amount" class="w-full border-gray-300 rounded mt-1" required>
+                </div>
+                <div class="mb-2"> <!--? TAG -->
+                    <label class="block text-sm font-medium text-gray-500">Etiqueta (opcional)</label>
+                    <input list="tag" id="tags" class="w-full border-gray-300 rounded mt-1">
+                    <datalist id="tag">
+                    </datalist>
+                </div>
+                <div class="mb-2"> <!--? Comentario -->
+                    <label class="block text-sm font-medium text-gray-500">Comentario (opcional)</label>
+                    <textarea id="comment" class="w-full border-gray-300 rounded mt-1" rows="2">
+                    </textarea>
+                </div>
+                <button type="submit" id="submit" class="mt-4 bg-sky-600 text-white px-4 py-2 rounded">Añadir</button>
+            </form>
+        </div>
+        <div class="m-6  p-4 grid grid-cols-1 justify-center mx-auto">
+            <h2 class="block text-center text-2xl mb-4">Ingresos</h2>
+            <div id="income-summary" class="grid grid-cols-4 gap-4">
+                <!-- Resumen por categorías irá aquí 👇 -->
+            </div>
+            <hr class="my-2">
+            <h2 class="block text-center text-2xl mb-4">Gastos</h2>
+            <div id="expenditure-summary" class="grid grid-cols-4 gap-4">
+                <!-- Resumen por categorías irá aquí 👇 -->
+            </div>
+            <hr class="my-2">
+            <h2 class="block text-center text-2xl mb-4">Transacciones</h2>
+            <div id="transaction-list" class="grid grid-cols-1 gap-4">
+                <!-- Lista de transacciones irá aquí 👇 -->
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="js/scripts.js" type="module"></script>
+
+
+</body>
+
+</html>

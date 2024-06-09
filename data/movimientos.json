@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1622547800000,
+        "type": "income",
+        "amount": 1200000.00,
+        "category": "Sueldo",
+        "tag": "",
+        "comment": "Pago mensual"
+    },
+    {
+        "id": 1622547800001,
+        "type": "expenditure",
+        "amount": 75000.00,
+        "category": "Mercado",
+        "tag": "Comida",
+        "comment": "Compra semanal"
+    },
+    {
+        "id": 1622547800002,
+        "type": "expenditure",
+        "amount": 2500.00,
+        "category": "Farmacia",
+        "tag": "Medicamentos",
+        "comment": "Tafirol"
+    },
+    {
+        "id": 1622547800003,
+        "type": "expenditure",
+        "amount": 50000.00,
+        "category": "Estudio",
+        "tag": "CoderHouse",
+        "comment": "Cuota 4 de 6"
+    },
+    {
+        "id": 1622547800004,
+        "type": "expenditure",
+        "amount": 200.00,
+        "category": "Entretenimiento",
+        "tag": "Cine",
+        "comment": ""
+    },
+    {
+        "id": 1622547800005,
+        "type": "expenditure",
+        "amount": 15000.00,
+        "category": "Seguro",
+        "tag": "",
+        "comment": "Auto"
+    },
+    {
+        "id": 1622547800006,
+        "type": "expenditure",
+        "amount": 35000.00,
+        "category": "Servicios",
+        "tag": "Luz",
+        "comment": ""
+    },
+    {
+        "id": 1622547800007,
+        "type": "expenditure",
+        "amount": 9000.00,
+        "category": "Streaming",
+        "tag": "Netflix",
+        "comment": ""
+    }
+]

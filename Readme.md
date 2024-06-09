@@ -5,6 +5,11 @@
 Se realizará en varias entregas sucesivas inrementales, en las cuales se irán añadiendo funcionalidades y refactorizando cuando sea conveniente.
 
 ### Pre Entrega 1
+
+[//]: # (captura)
+
+![Captura de la Pre Entrega 1](https://raw.githubusercontent.com/JuaniPardo/Budget/main/assets/images/Screen%20Pre-entrega1.png?token=GHSAT0AAAAAACOD2JWZRKXQAKYRBSKI7RIUZTGEM3Q)
+
 11/06/2024
 
 En esta primera entrega se ha creado la estructura básica de la aplicación, con los siguientes elementos:
@@ -26,4 +31,4 @@ Autor: [Juan Pardo](https://github.com/JuaniPardo)
 <img src="https://avatars.githubusercontent.com/u/118234203?v=4" alt="Imágen del autor" style="width:200px; height:200px; border-radius:50%;">
 
 
-[Enlace a la página de CoderHouse](https://www.coderhouse.com/)
+[Enlace a la página del Repositorio](https://github.com/JuaniPardo/Budget)

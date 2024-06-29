@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Movimientos</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/water.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="p-0">
+    <header class="bg-sky-950 w-full">
+        <nav class="flex justify-between items-center p-3">
+            <div class="text-4xl font-bold text-sky-500">
+                <a href="../index.html">
+                    B<span class="text-gray-100 font-normal hover:text-yellow-400">udget</span>
+                </a>
+            </div>
+            <div>
+                <ul class="flex justify-center items-center gap-[4vw] uppercase">
+                    <li><a class="hover:text-sky-500 hover:no-underline" href="../index.html">Inicio</a></li>
+                    <li><a class="hover:text-sky-500 hover:no-underline"
+                            href="transactionLog.html">Movimientos</a></li>
+                    <li><a class="text-yellow-400 hover:text-sky-500 hover:no-underline"
+                            href="newTransaction.html">Agregar
+                            Transacción</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="app max-w-5xl mx-auto">
+        <h1 class="text-3xl text-center my-3 border-1 border-red-700">Registro de Movimientos</h1>
+
+        <div class="max-w-lg bg-sky-950 mx-auto p-6 rounded-lg shadow-md">
+            <form id="transaction-form" class="mb-4">
+                <div class="mb-2 block"> <!--? Tipo -->
+                    <label class="block text-sm font-medium text-gray-500">Tipo</label>
+                    <select id="transaction-type" class="w-full border-gray-300 rounded mt-1">
+                    </select>
+                </div>
+                <div class="mb-2 block"> <!--? Categoria -->
+                    <label class="block text-sm font-medium text-gray-500">Categoría</label>
+                    <select name="category" id="category" class="w-full border-gray-300 rounded mt-1">
+                    </select>
+                </div>
+                <div class="mb-2"> <!--? Monto -->
+                    <label class="block text-sm font-medium text-gray-500">Cantidad</label>
+                    <input type="number" id="amount" class="w-full border-gray-300 rounded mt-1" required>
+                </div>
+                <div class="mb-2"> <!--? TAG -->
+                    <label class="block text-sm font-medium text-gray-500">Etiqueta (opcional)</label>
+                    <input list="tag" id="tags" class="w-full border-gray-300 rounded mt-1">
+                    <datalist id="tag">
+                    </datalist>
+                </div>
+                <div class="mb-2"> <!--? Comentario -->
+                    <label class="block text-sm font-medium text-gray-500">Comentario (opcional)</label>
+                    <textarea id="comment" class="w-full border-gray-300 rounded mt-1" rows="2"></textarea>
+                </div>
+                <button type="submit" id="submit" class="mt-4 bg-sky-600 text-white px-4 py-2 rounded">Añadir</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="../js/formPage.js" type="module"></script>
+
+
+</body>
+
+</html>

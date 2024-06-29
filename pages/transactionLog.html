@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Movimientos</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/water.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="p-0">
+    <header class="bg-sky-950 w-full">
+        <nav class="flex justify-between items-center p-3">
+            <div class="text-4xl font-bold text-sky-500">
+                <a href="../index.html">
+                    B<span class="text-gray-100 font-normal hover:text-yellow-400">udget</span>
+                </a>
+            </div>
+            <div>
+                <ul class="flex justify-center items-center gap-[4vw] uppercase">
+                    <li><a class="hover:text-sky-500 hover:no-underline" href="../index.html">Inicio</a></li>
+                    <li><a class="text-yellow-400 hover:text-sky-500 hover:no-underline"
+                            href="transactionLog.html">Movimientos</a></li>
+                    <li><a class="hover:text-sky-500 hover:no-underline" href="newTransaction.html">Agregar
+                            Transacción</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="app max-w-5xl mx-auto">
+        <h1 class="text-3xl text-center my-3 border-1 border-red-700">Listado de Movimientos</h1>
+
+        <div class="m-6  p-4 grid grid-cols-1 justify-center mx-auto">
+            <hr class="my-2">
+            <h2 class="block text-center text-2xl mb-4">Transacciones</h2>
+            <div id="transaction-list" class="grid grid-cols-1 gap-4">
+                <!-- Lista de transacciones irá aquí 👇 -->
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="../js/transactionPage.js" type="module"></script>
+
+
+</body>
+
+</html>

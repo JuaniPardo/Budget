@@ -1,4 +1,3 @@
-import { data } from './data.js';
 
 // Listener para detectar cambios en el DOM
 document.addEventListener('DOMContentLoaded', () => {

@@ -25,7 +25,7 @@ En esta primera entrega se ha creado la estructura básica de la aplicación, co
 ### Pre Entrega 2
 
 [//]: # (captura)
-![Captura de la Pre Entrega 2]((https://github.com/JuaniPardo/Budget/blob/main/assets/images/Screen%20Pre-Entrega2.png?raw=true))
+![Captura de la Pre Entrega 2](https://github.com/JuaniPardo/Budget/blob/main/assets/images/Screen%20Pre-Entrega2.png?raw=true)
 
 01/07/2024
 

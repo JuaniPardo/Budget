@@ -33,19 +33,19 @@ export const renderExpenditureCategoryCard = (category, container) => {
 
 export const renderTransaction = (transaction, container) => {
     const transactionElement = document.createElement('div');
-    transactionElement.classList.add('p-4', 'mb-2', 'backdrop-blur-sm', 'bg-white/5', 'shadowmd', transaction.type === 'income' ? 'shadow-green-500' : 'shadow-red-500', 'rounded-lg', 'shadow-md');
+    transactionElement.classList.add('p-4', 'mb-2', 'backdrop-blur-sm', 'bg-white/5', 'shadowmd', 'rounded-lg', 'shadow-sm', transaction.type === 'Ingreso' ? 'shadow-green-500' : 'shadow-red-500');
     transactionElement.innerHTML = `
         <div class="flex justify-between items-center ">
             <div>
                 <p class="font-bold">${transaction.category}</p>
-                <p class="text-xs font-bold text-yellow-300">${transaction.tag}</p>
+                <p class="text-xs font-bold text-yellow-300">${transaction.tag || ''}</p>
             </div>
             <div class="text-center">
-                <p class="text-sm">${transaction.comment}</p>
+                <p class="text-sm">${transaction.comment || ''}</p>
             </div>
             <div class="text-right">
-                <p class="font-bold ${transaction.type === 'income' ? 'text-green-600' : 'text-red-600'}">
-                    ${transaction.type === 'income' ? '+' : '-'}$${transaction.amount.toFixed(2)}
+                <p class="font-bold ${transaction.type === 'Ingreso' ? 'text-green-600' : 'text-red-600'}">
+                    ${transaction.type === 'Ingreso' ? '+' : '-'}$${transaction.amount.toFixed(2)}
                 </p>
             </div>
         </div>

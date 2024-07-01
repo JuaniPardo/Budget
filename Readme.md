@@ -8,7 +8,7 @@ Se realizará en varias entregas sucesivas inrementales, en las cuales se irán 
 
 [//]: # (captura)
 
-![Captura de la Pre Entrega 1](https://raw.githubusercontent.com/JuaniPardo/Budget/main/assets/images/Screen%20Pre-entrega1.png?token=GHSAT0AAAAAACOD2JWZRKXQAKYRBSKI7RIUZTGEM3Q)
+![Captura de la Pre Entrega 1](https://raw.githubusercontent.com/JuaniPardo/Budget/main/assets/images/Screen%20Pre-entrega1.png)
 
 11/06/2024
 
@@ -21,8 +21,21 @@ En esta primera entrega se ha creado la estructura básica de la aplicación, co
 - `README.md` con la descripción del proyecto.
 - `TODO.md` con la lista de tareas pendientes.
 
-
 [//]: # (### Entrega 2)
+### Pre Entrega 2
+
+[//]: # (captura)
+![Captura de la Pre Entrega 2](https://raw.githubusercontent.com/JuaniPardo/Budget/main/assets/images/Screen%20Pre-entrega2.png)
+
+01/07/2024
+
+En esta segunda entrega se ha añadido las siguientes funcionalidades:
+- Añadir nuevas transacciones.
+- Se guarda la información de las transacciones en el navegador local.
+- Se muestra la información de las transacciones en el navegador local.
+- Se separa la aplicación en distintas páginas navegables con un navbar
+
+
 
 
 Autor: [Juan Pardo](https://github.com/JuaniPardo)

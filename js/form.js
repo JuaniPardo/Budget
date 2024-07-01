@@ -1,4 +1,5 @@
-import { data } from './data';
+import { data } from './data.js';
+
 
 export const initializeForm = (transactionTypeSelect, categorySelect, tagSelect) => {
     const { transactionType, expenditureCategory, incomeCategory, tags } = data;

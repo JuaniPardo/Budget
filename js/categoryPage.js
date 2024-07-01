@@ -1,19 +1,26 @@
-import { data } from './data.js';
-// store data in localStorage
-import { renderIncomeCategoryCard, renderExpenditureCategoryCard } from './render.js';
+import {data} from './data.js';
+import {renderIncomeCategoryCard, renderExpenditureCategoryCard} from './render.js';
+
+// save initial data to localStorage
+Object.entries(data).forEach(([key, value]) => {
+  localStorage.setItem(key, JSON.stringify(value));
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
-    const $incomeSummary = document.getElementById('income-summary');
-    const $expenditureSummary = document.getElementById('expenditure-summary');
+  const $incomeSummary = document.getElementById('income-summary');
+  const $expenditureSummary = document.getElementById('expenditure-summary');
 
-    const incomeCategory = data.incomeCategory;
-    const expenditureCategory = data.expenditureCategory;
+  // render incomeCategory cards from localStorage
+  const incomeCategory = JSON.parse(localStorage.getItem('incomeCategory'));
+  incomeCategory.forEach(category => {
+    renderIncomeCategoryCard(category, $incomeSummary);
+  });
 
-    incomeCategory.forEach(category => {
-        renderIncomeCategoryCard(category, $incomeSummary);
-    });
-
-    expenditureCategory.forEach(category => {
-        renderExpenditureCategoryCard(category, $expenditureSummary);
-    });
+// render expenditureCategory cards from localStorage
+  const expenditureCategory = JSON.parse(localStorage.getItem('expenditureCategory'))
+  expenditureCategory.forEach(category => {
+    renderExpenditureCategoryCard(category, $expenditureSummary);
+  })
 });
+

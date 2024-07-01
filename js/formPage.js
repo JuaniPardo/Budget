@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initializeForm($transactionTypeSelect, $categorySelect, $tagSelect);
 
-    const { transactions } = data;
+    const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
     $submitButton.addEventListener('click', (e) => {
         e.preventDefault();
 
@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
             type: $transactionTypeSelect.value,
             amount: parseFloat($amountInput.value),
             category: $categorySelect.value,
-            tag: $tagSelect.value,
-            comment: $commentInput.value
+            ...(!!$tagSelect.value && { tag: $tagSelect.value.trim() }),
+            ...(!!$commentInput.value && { comment: $commentInput.value.trim() })
         };
 
         transactions.push(newTransaction);

@@ -14,4 +14,13 @@ window.addEventListener('click', (event) => {
 });
 
 // TODO - add event listener to toggle the hamburger menu
-// TODO = add function to delete the transactions saved in the local storage
+const deleteTransactions = document.getElementById('delete-transactions');
+deleteTransactions.addEventListener('click', (e) => {
+  e.preventDefault();
+  confirm('¿Estás seguro de que quieres borrar todas las transacciones? Esta acción no se puede deshacer') && deleteAllTransactions();
+});
+
+function deleteAllTransactions() {
+  localStorage.removeItem('transactions');
+  window.location.reload();
+}

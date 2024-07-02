@@ -2,6 +2,7 @@ import {data} from './data.js';
 import {renderIncomeCategoryCard, renderExpenditureCategoryCard} from './render.js';
 
 // save initial data to localStorage
+// TODO - Create a button that allows users to generate dummy data The app shouldn't have any data initially
 Object.entries(data).forEach(([key, value]) => {
   localStorage.setItem(key, JSON.stringify(value));
 });

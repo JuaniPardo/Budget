@@ -1,27 +1,28 @@
-import {data} from './data.js';
 import {renderIncomeCategoryCard, renderExpenditureCategoryCard} from './render.js';
-
-// save initial data to localStorage
-// TODO - Create a button that allows users to generate dummy data The app shouldn't have any data initially
-Object.entries(data).forEach(([key, value]) => {
-  localStorage.setItem(key, JSON.stringify(value));
-});
-
 
 document.addEventListener('DOMContentLoaded', () => {
   const $incomeSummary = document.getElementById('income-summary');
-  const $expenditureSummary = document.getElementById('expenditure-summary');
-
-  // render incomeCategory cards from localStorage
+  const $expenditureSummary = document.getElementById('expenditure-summary')
+  const transactions = JSON.parse(localStorage.getItem('transactions'));
   const incomeCategory = JSON.parse(localStorage.getItem('incomeCategory'));
-  incomeCategory.forEach(category => {
-    renderIncomeCategoryCard(category, $incomeSummary);
+  const expenditureCategory = JSON.parse(localStorage.getItem('expenditureCategory'));
+
+  const categorySum = (category, transactions) => {
+    return transactions.reduce((sum, transaction) => {
+      if (transaction.category === category) {
+        return sum + transaction.amount;
+      }
+      return sum;
+    }, 0);
+  };
+
+  incomeCategory.forEach((category) => {
+    const amount = categorySum(category, transactions)
+    renderIncomeCategoryCard(category, amount, $incomeSummary);
   });
 
-// render expenditureCategory cards from localStorage
-  const expenditureCategory = JSON.parse(localStorage.getItem('expenditureCategory'))
-  expenditureCategory.forEach(category => {
-    renderExpenditureCategoryCard(category, $expenditureSummary);
-  })
+  expenditureCategory.forEach((category) => {
+    const amount = categorySum(category, transactions);
+    renderExpenditureCategoryCard(category, amount, $expenditureSummary);
+  });
 });
-

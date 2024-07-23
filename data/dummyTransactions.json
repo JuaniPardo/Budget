@@ -1,7 +1,7 @@
 [
     {
         "id": 1622547800000,
-        "type": "income",
+        "type": "ingreso",
         "amount": 1200000.00,
         "category": "Sueldo",
         "tag": "",
@@ -9,7 +9,7 @@
     },
     {
         "id": 1622547800001,
-        "type": "expenditure",
+        "type": "gasto",
         "amount": 75000.00,
         "category": "Mercado",
         "tag": "Comida",
@@ -17,7 +17,7 @@
     },
     {
         "id": 1622547800002,
-        "type": "expenditure",
+        "type": "gasto",
         "amount": 2500.00,
         "category": "Farmacia",
         "tag": "Medicamentos",
@@ -25,7 +25,7 @@
     },
     {
         "id": 1622547800003,
-        "type": "expenditure",
+        "type": "gasto",
         "amount": 50000.00,
         "category": "Estudio",
         "tag": "CoderHouse",
@@ -33,7 +33,7 @@
     },
     {
         "id": 1622547800004,
-        "type": "expenditure",
+        "type": "gasto",
         "amount": 200.00,
         "category": "Entretenimiento",
         "tag": "Cine",
@@ -41,7 +41,7 @@
     },
     {
         "id": 1622547800005,
-        "type": "expenditure",
+        "type": "gasto",
         "amount": 15000.00,
         "category": "Seguro",
         "tag": "",
@@ -49,7 +49,7 @@
     },
     {
         "id": 1622547800006,
-        "type": "expenditure",
+        "type": "gasto",
         "amount": 35000.00,
         "category": "Servicios",
         "tag": "Luz",
@@ -57,7 +57,7 @@
     },
     {
         "id": 1622547800007,
-        "type": "expenditure",
+        "type": "gasto",
         "amount": 9000.00,
         "category": "Streaming",
         "tag": "Netflix",

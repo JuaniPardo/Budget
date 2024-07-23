@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seguimiento de Movimientos</title>
+    <title>Budget - Categorías</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/water.css">
+    <link rel="stylesheet" href="../css/water.css">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -25,26 +25,26 @@
         <div>
             <ul class="flex justify-center items-center gap-[3vw] uppercase">
                 <li>
-                    <a class="text-yellow-400 hover:text-sky-500 hover:no-underline"
-                       href="#">
+                    <a class="hover:text-sky-500 hover:no-underline"
+                       href="../index.html">
                         Inicio
                     </a>
                 </li>
                 <li>
-                    <a class="hover:text-sky-500 hover:no-underline"
-                       href="pages/categories.html">
+                    <a class="text-yellow-400 hover:text-sky-500 hover:no-underline"
+                       href="#">
                         Categorías
                     </a>
                 </li>
                 <li>
                     <a class="hover:text-sky-500 hover:no-underline"
-                       href="pages/transactionLog.html">
+                       href="transactionLog.html">
                         Movimientos
                     </a>
                 </li>
                 <li>
                     <a class="hover:text-sky-500 hover:no-underline"
-                       href="pages/newTransaction.html">
+                       href="newTransaction.html">
                         Agregar Transacción
                     </a>
                 </li>
@@ -82,33 +82,25 @@
     </nav>
 </header>
 <div class="app max-w-5xl mx-auto">
-    <h1 class="text-5xl text-center mt-8 text-yellow-400"><span class="font-bold text-sky-500 "
-    >B</span>udget Online</h1>
+    <h1 class="text-3xl text-center my-3 border-1 border-red-700">Estado de Gastos por Categoría</h1>
 
     <div class="m-6  p-4 grid grid-cols-1 justify-center mx-auto">
-        <!-- Mensaje de bienvenida -->
-        <div id="welcome-message" class="grid grid-cols-1 gap-4">
-            <p>Bienvenido a Budget Online, un proyecto de
-                <a class="text-yellow-400 hover:text-sky-500 hover:no-underline uppercase"
-                   href="https://github.com/JuanPardoDev"
-                   target="_blank">
-                    Juan Pardo
-                </a>para el curso de JavaScript en
-                <a class="text-sky-300 hover:text-sky-500 hover:no-underline uppercase"
-                   href="https://www.coderhouse.com/ar/online/javascript"
-                   target="_blank">CoderHouse</a>.</p>
-            <p>Este proyecto es un ejemplo de cómo se puede crear un proyecto web de finanzas usando HTML, CSS y
-                JavaScript. Este proyecto se ha creado para ser una introducción al mundo de JavaScript y se ha optado
-                por usar Tailwind CSS para darle un aspecto moderno y atractivo.</p>
-            <p>Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos a través de nuestro
-                <a class="text-yellow-400 hover:text-sky-500 hover:no-underline uppercase"
-                   href="https://github.com/JuaniPardo/Budget/issues"
-                   target="_blank">repositorio de GitHub</a>.</p>
+        <h2 class="block text-center text-2xl mb-4">Ingresos</h2>
+        <div id="income-summary" class="grid grid-cols-4 gap-4">
+            <!-- Resumen por categorías irá aquí 👇 -->
+        </div>
+        <hr class="my-2">
+        <h2 class="block text-center text-2xl mb-4">Gastos</h2>
+        <div id="expenditure-summary" class="grid grid-cols-4 gap-4">
+            <!-- Resumen por categorías irá aquí 👇 -->
         </div>
     </div>
+
 </div>
 
-<script src="js/navbarScripts.js" type="module"></script>
+
+<script src="../js/categoryPage.js" type="module"></script>
+<script src="../js/navbarScripts.js" type="module"></script>
 
 
 </body>

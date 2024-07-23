@@ -1,0 +1,34 @@
+{
+  "transactionType": [
+    "ingreso",
+    "gasto"
+  ],
+  "expenditureCategory": [
+    "Mercado",
+    "Farmacia",
+    "Estudio",
+    "Entretenimiento",
+    "Seguro",
+    "Servicios",
+    "Streaming"
+  ],
+  "incomeCategory": [
+    "Sueldo",
+    "Freelance",
+    "Otros"
+  ],
+  "tags": [
+    "Comida",
+    "CoderHouse",
+    "Agua",
+    "Luz",
+    "Gas",
+    "Internet",
+    "Netflix",
+    "Spotify",
+    "Medicamentos",
+    "Limpieza",
+    "Cine",
+    "Salidas"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "budget",
+  "version": "1.0.0",
+  "description": "## El proyecto consiste en una Aplicación Web para manejar el presupuesto mensual del usuario.",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sweetalert2": "^11.12.3"
+  }
+}

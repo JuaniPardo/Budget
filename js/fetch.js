@@ -2,6 +2,7 @@
 async function fetchInitialData() {
   const response = await fetch("../data/categories.json");
   if (!response.ok) {
+    console.info(response);
     switch (response.status) {
       case 404:
         throw new Error(`Error 404!\nFile not found!`);

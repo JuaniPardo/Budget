@@ -1,4 +1,4 @@
-import {renderIncomeCategoryCard, renderExpenditureCategoryCard} from './render.js';
+import {renderIncomeCategoryCard, renderExpenditureCategoryCard} from '../js/render.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const $incomeSummary = document.getElementById('income-summary');

@@ -1,8 +1,5 @@
 // Data import
-import {fetchDummyTransactions} from "./fetch.js";
-import { renderTransaction } from "./render.js";
-import {assignDeleteEvent} from "./transactionLogPage.js";
-
+import { deleteAllTransactions, addDummyDataToLocalStorage } from "../js/utils.js";
 // HTML Element selection
 const dropdownButton = document.getElementById('dropdown-button');
 const dropdownMenu = document.getElementById('dropdown-menu');
@@ -24,23 +21,6 @@ const hideDropdownMenu = (event) => {
   }
 };
 
-// Transaction deletion
-const deleteAllTransactions = () => {
-  localStorage.removeItem('transactions');
-  window.location.reload();
-};
-
-// Dummy data generation
-async function addDummyDataToLocalStorage() {
-  const dummyTransactions = await fetchDummyTransactions();
-  console.log(dummyTransactions);
-  localStorage.setItem('transactions', JSON.stringify(dummyTransactions));
-  dummyTransactions.forEach((transaction, index) => {
-    renderTransaction(transaction, index, $transactionList);
-  });
-  assignDeleteEvent(dummyTransactions);
-}
-
 // Event listeners
 if (dropdownButton && dropdownMenu) {
   dropdownButton.addEventListener('click', toggleDropdownMenu);
@@ -59,6 +39,6 @@ if (deleteTransactions) {
 if (addDummyData) {
   addDummyData.addEventListener('click', (e) => {
     e.preventDefault();
-    addDummyDataToLocalStorage();
+    addDummyDataToLocalStorage($transactionList).then(r => console.log(r));
   });
 }

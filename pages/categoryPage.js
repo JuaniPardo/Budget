@@ -1,4 +1,4 @@
-import {renderIncomeCategoryCard, renderExpenditureCategoryCard} from '../js/render.js';
+import {renderExpenditureCategoryCard, renderIncomeCategoryCard} from '../js/render.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const $incomeSummary = document.getElementById('income-summary');
@@ -16,13 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 0);
   };
 
-  incomeCategory.forEach((category) => {
-    const amount = categorySum(category, transactions)
-    renderIncomeCategoryCard(category, amount, $incomeSummary);
-  });
+  // Check if there are transactions
+  if (transactions) {
+    incomeCategory.forEach((category) => {
+      const amount = categorySum(category, transactions)
+      renderIncomeCategoryCard(category, amount, $incomeSummary);
+    });
 
-  expenditureCategory.forEach((category) => {
-    const amount = categorySum(category, transactions);
-    renderExpenditureCategoryCard(category, amount, $expenditureSummary);
-  });
+    expenditureCategory.forEach((category) => {
+      const amount = categorySum(category, transactions);
+      renderExpenditureCategoryCard(category, amount, $expenditureSummary);
+    });
+  }
 });

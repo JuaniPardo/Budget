@@ -20,6 +20,11 @@ export const initializeForm = async (transactionTypeSelect, categorySelect, tagS
     const initialData = await fetchInitialData();
 
     const {transactionType, incomeCategory, expenditureCategory, tags} = initialData;
+    // Store the initial data in localStorage
+    localStorage.setItem('expenditureCategory', JSON.stringify(expenditureCategory));
+    localStorage.setItem('incomeCategory', JSON.stringify(incomeCategory));
+    localStorage.setItem('tags', JSON.stringify(tags));
+    localStorage.setItem('transactionType', JSON.stringify(transactionType));
 
     transactionType.forEach(type => {
       const option = document.createElement('option');

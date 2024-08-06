@@ -1,6 +1,6 @@
 // Script para mostrar todas las trnsacciones en la lista.
 import { renderTransaction } from '../js/render.js';
-import { showErrorMessage } from '../js/utils.js';
+import { showWarningMessage } from '../js/utils.js';
 import Transaction from '../js/models/Transaction.js';
 
 // Function to load transactions from local storage.
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     assignDeleteEvent(transactions);
   } else {
-    showErrorMessage("No se han encontrado transacciones!!!\nPuedes crear una nueva, o cargar transacciones de muestra.");
+    showWarningMessage("No se han encontrado transacciones!");
   }
 
 });

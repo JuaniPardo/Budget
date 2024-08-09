@@ -91,7 +91,7 @@ const editTransaction = (transaction) => {
         ...transaction,
         type: document.getElementById('transaction-type').value,
         category: document.getElementById('category').value,
-        amount: document.getElementById('amount').value,
+        amount: isNaN(parseFloat(document.getElementById('amount').value)) ? 0 : parseFloat(document.getElementById('amount').value),
         tag: document.getElementById('tags').value,
         comment: document.getElementById('comment').value,
       };

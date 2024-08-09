@@ -1,6 +1,19 @@
-import { renderTransaction } from '../js/render.js';
-import { showMessage } from '../js/utils.js';
+import {renderTransaction} from '../js/render.js';
+import {fetchInitialData} from "../js/fetch.js";
 import Transaction from '../js/models/Transaction.js';
+
+// Initial data used in the edit forms.
+let transactionType, incomeCategory, expenditureCategory, tags;
+
+async function initializeData() {
+  const initialData = await fetchInitialData();
+  transactionType = initialData.transactionType;
+  incomeCategory = initialData.incomeCategory;
+  expenditureCategory = initialData.expenditureCategory;
+  tags = initialData.tags;
+}
+
+initializeData().then(r => console.log(r));
 
 // Function to load transactions from local storage.
 export const loadTransactions = () => {
@@ -15,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     transactions.forEach((transaction, index) => {
       renderTransaction(transaction, index, $transactionList);
     });
+    assignEditTransactionEvent(transactions);
     assignDeleteEvent(transactions);
   } else {
     $transactionList.innerHTML = `<h3 class="block text-center text-yellow-400 text-xl mb-4">No se han registrado transacciones</h3>`;
@@ -22,6 +36,80 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+//Function to edit transaction.
+const editTransaction = (transaction) => {
+  const transactionTypeOptions = transactionType.map(type => `<option value="${type}" ${transaction.type === type ? 'selected' : ''}>${type}</option>`).join('');
+  const categoryOptions = [...incomeCategory, ...expenditureCategory].map(category => `<option value="${category}" ${transaction.category === category ? 'selected' : ''}>${category}</option>`).join('');
+  const tagOptions = tags.map(tag => `<option value="${tag}" ${transaction.tag === tag ? 'selected' : ''}>${tag}</option>`).join('');
+// Create a form to edit the transaction
+  const form = document.createElement('form');
+  form.classList.add('mb-4');
+  form.innerHTML = `
+    <div class="mb-2 block"> <!--? Tipo -->
+        <label class="block text-sm font-medium text-gray-500">Tipo</label>
+        <select id="transaction-type" class="w-full border-gray-300 rounded mt-1">
+        ${transactionTypeOptions}
+        </select>
+    </div>
+    <div class="mb-2 block"> <!--? Categoria -->
+        <label class="block text-sm font-medium text-gray-500">Categoría</label>
+        <select name="category" id="category" class="w-full border-gray-300 rounded mt-1">
+        ${categoryOptions}
+        </select>
+    </div>
+    <div class="mb-2"> <!--? Monto -->
+        <label class="block text-sm font-medium text-gray-500">Cantidad</label>
+        <input type="number" id="amount" class="w-full border-gray-300 rounded mt-1" value="${transaction.amount}" required>
+    </div>
+    <div class="mb-2"> <!--? TAG -->
+        <label class="block text-sm font-medium text-gray-500">Etiqueta (opcional)</label>
+        <input list="tag" id="tags" class="w-full border-gray-300 rounded mt-1">
+        <datalist id="tag">
+        ${tagOptions}
+        </datalist>
+    </div>
+    <div class="mb-2"> <!--? Comentario -->
+        <label class="block text-sm font-medium text-gray-500">Comentario (opcional)</label>
+        <textarea id="comment" class="w-full border-gray-300 rounded mt-1" rows="2">${transaction.comment || ''}</textarea>
+    </div>
+`
+  Swal.fire({
+    title: 'Editar Transacción',
+    html: form,
+    showCancelButton: true,
+    confirmButtonText: 'Confirmar',
+    cancelButtonText: 'Cancelar',
+    customClass: {
+      popup: 'text-gray-100 bg-sky-950',
+      confirmButton: 'bg-sky-600',
+      cancelButton: 'bg-gray-500',
+    },
+  }).then((result) => {
+    if (result.isConfirmed) {
+      console.log(result);
+      const updatedTransaction = {
+        ...transaction,
+        type: document.getElementById('transaction-type').value,
+        category: document.getElementById('category').value,
+        amount: document.getElementById('amount').value,
+        tag: document.getElementById('tags').value,
+        comment: document.getElementById('comment').value,
+      };
+
+      updateTransactionToLocalStorage(updatedTransaction);
+      window.location.reload();
+    }
+  });
+};
+
+const updateTransactionToLocalStorage = (updatedTransaction) => {
+  const transactions = loadTransactions();
+  const transactionIndex = transactions.findIndex(transaction => transaction.id === updatedTransaction.id);
+  if (transactionIndex !== -1) {
+    transactions[transactionIndex] = updatedTransaction;
+    localStorage.setItem('transactions', JSON.stringify(transactions));
+  }
+};
 
 // Function to delete transaction.
 const deleteTransaction = (id) => {
@@ -41,6 +129,19 @@ const deleteTransaction = (id) => {
       $transactionElement.id = newIndex;
       const $deleteButton = document.getElementById(`${newIndex}-delete`);
       $deleteButton.id = `${newIndex}-delete`;
+    }
+  });
+};
+
+// Function to edit transaction.
+const assignEditTransactionEvent = (transactions) => {
+  transactions.forEach((transaction, index) => {
+
+    const $editButton = document.getElementById(`${index}-edit`);
+    if ($editButton) {
+      $editButton.addEventListener('click', () => {
+        editTransaction(transaction);
+      });
     }
   });
 };
